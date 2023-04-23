@@ -1,12 +1,17 @@
 // Export mongoose
-const  mongoose = require("mongoose");
+// const  mongoose = require("mongoose");
 
-require('dotenv-flow').config();
+// require('dotenv-flow').config();
+import mongoose from "mongoose";
+import dotenv from "dotenv-flow";
+
+dotenv.config();
 
 //Assign MongoDB connection string to Uri and declare options settings
 var uri = `mongodb+srv://${process.env.MONGO_URL_NAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL_CLUSTER}/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`
 console.log(`url: `+uri)
-const db = require("../models");
+// const db = require("../models");
+import db from "../models/index.js";
 const User = db.user;
 
 db.mongoose
